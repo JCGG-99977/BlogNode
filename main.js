@@ -24,6 +24,9 @@ res.header("Access-Control-Allow-Origin", "*");
   res.header("Content-Type", "application/json;charset=utf-8");
   next();
 })
+// 邮箱验证
+const email=require('./router/sendemail')
+app.use(email)
 app.use('/',(req,res)=>{
     res.send('请求正常，可正常使用！返回值：OK')
 })
